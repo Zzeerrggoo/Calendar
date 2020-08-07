@@ -4,13 +4,19 @@ import styles from './calendar-date.module.css';
 
 function CalendarDate(props) {
   const { date, currentDate, isCurrentMonth } = props;
+  const isCurrentDate = isCurrentMonth && date === currentDate.getDate();
 
   const className = classNames(styles.date, {
-    [styles.currentDate]: isCurrentMonth && date === currentDate.getDate(),
+    [styles.currentDate]: isCurrentDate,
     [styles.otherMonthDate]: !isCurrentMonth,
   });
 
-  return <td className={className}> {date} </td>;
+  return (
+    <td className={className}>
+      {date}
+      {isCurrentDate && <span className={styles.currentDayCircle}></span>}
+    </td>
+  );
 }
 
 export default CalendarDate;

@@ -23,21 +23,25 @@ class Month extends Component {
 
   render() {
     return (
-      <table className={styles.container}>
-        <caption>{date.format(Date.now(), 'MMMM y')}</caption>
-        <thead>
-          <tr>
-            <th>s</th>
-            <th>m</th>
-            <th>t</th>
-            <th>w</th>
-            <th>t</th>
-            <th>f</th>
-            <th>s</th>
-          </tr>
-        </thead>
-        <tbody>{this.getWeeks()}</tbody>
-      </table>
+      <div className={styles.container}>
+        <table>
+          <caption className={styles.tableCaption}>
+            {date.format(Date.now(), 'MMMM y')}
+          </caption>
+          <thead className={styles.tableHead}>
+            <tr>
+              <th>s</th>
+              <th>m</th>
+              <th>t</th>
+              <th>w</th>
+              <th>t</th>
+              <th>f</th>
+              <th>s</th>
+            </tr>
+          </thead>
+          <tbody className={styles.tbody}>{this.getWeeks()}</tbody>
+        </table>
+      </div>
     );
   }
 }

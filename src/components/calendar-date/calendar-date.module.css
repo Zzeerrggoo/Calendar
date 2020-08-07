@@ -7,6 +7,17 @@
 }
 
 .currentDate {
+  position: relative;
   color: red;
   font-weight: bold;
+}
+
+.currentDayCircle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  border: 7px solid red;
 }

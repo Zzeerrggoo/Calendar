@@ -1,5 +1,30 @@
 .container {
-  margin: auto;
-  width: 50%;
-  padding: 0.5rem;
+  box-sizing: content-box;
+  font-family: sans-serif;
+  width: calc(50% - 2rem);
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem 4rem;
+}
+
+.tableCaption {
+  margin: 5rem 0;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #009991;
+}
+
+.tableHead {
+  color: #eb1b57;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+tbody td {
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+
+th {
+  text-transform: capitalize;
 }
