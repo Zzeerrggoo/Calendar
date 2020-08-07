@@ -7,7 +7,7 @@ function CalendarDate(props) {
 
   const className = classNames(styles.date, {
     [styles.currentDate]: isCurrentMonth && date === currentDate,
-    [styles.otherMonthDate]: !isCurrentMonth,
+    [styles.otherMonthDate]: isCurrentMonth,
   });
 
   return <td className={className}>{date}</td>;
