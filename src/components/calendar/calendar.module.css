@@ -1,0 +1,11 @@
+@import './../common/reset.module.css';
+
+.container {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: 600px;
+
+  text-align: center;
+  border: 0.6rem solid #009991;
+  border-bottom: 0.9rem solid #009991;
+}

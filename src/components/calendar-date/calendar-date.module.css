@@ -2,10 +2,11 @@
   text-align: center;
 }
 
-.currentDate {
-  text-align: center;
+.otherMonthDate {
+  color: gray;
 }
 
-.otherMonthDate {
+.currentDate {
   color: red;
+  font-weight: bold;
 }

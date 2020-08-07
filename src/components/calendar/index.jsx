@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CurrentDate from './../date';
 import Month from './../month';
+import styles from './calendar.module.css';
 
 class Calendar extends Component {
   constructor(props) {
@@ -14,7 +15,7 @@ class Calendar extends Component {
   render() {
     const { currentDate } = this.state;
     return (
-      <article>
+      <article className={styles.container}>
         <CurrentDate />
         <Month
           year={currentDate.getFullYear()}

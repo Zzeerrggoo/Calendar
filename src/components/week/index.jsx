@@ -12,6 +12,7 @@ class Week extends Component {
     for (let i = 0; i < 7; ++i) {
       calendarDates.push(
         <CalendarDate
+          key={firstDate.toDateString()}
           date={firstDate.getDate()}
           currentDate={currentDate}
           isCurrentMonth={firstDate.getMonth() === currentDate.getMonth()}

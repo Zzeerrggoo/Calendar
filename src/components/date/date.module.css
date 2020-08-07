@@ -1,0 +1,18 @@
+.container {
+  color: #ffff;
+  width: 50%;
+  background-color: #38cec4;
+  font-family: sans-serif;
+  margin-bottom: -0.3rem;
+}
+
+.containerDay {
+  margin: 3rem 0;
+  font-size: 2rem;
+  font-weight: lighter;
+}
+
+.containerDate {
+  font-size: 5rem;
+  margin-bottom: 5rem;
+}

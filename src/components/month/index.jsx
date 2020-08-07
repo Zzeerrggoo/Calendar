@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as date from 'date-fns';
 import Week from './../week';
+import styles from './month.module.css';
 
 class Month extends Component {
   getWeeks() {
@@ -11,6 +12,7 @@ class Month extends Component {
     for (let i = 0, j = 1; i < weekOfMonth; ++i, j += 7) {
       currentWeeks.push(
         <Week
+          key={i}
           year={year}
           weekNumber={date.getWeek(new Date(year, currentMonth, j))}
         />
@@ -21,9 +23,9 @@ class Month extends Component {
 
   render() {
     return (
-      <table>
+      <table className={styles.container}>
+        <caption>{date.format(Date.now(), 'MMMM y')}</caption>
         <thead>
-          <caption>{date.format(Date.now(), 'MMMM y')}</caption>
           <tr>
             <th>s</th>
             <th>m</th>
