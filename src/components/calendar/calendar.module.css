@@ -1,4 +1,4 @@
-@import './../common/reset.module.css';
+@import '../../common/reset.module.css';
 
 .container {
   box-sizing: border-box;

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import CalendarDate from './../calendar-date';
-import * as dateFns from 'date-fns';
+import PropTypes from 'prop-types';
 
 class Week extends Component {
   getDates() {
-    const currentDate = new Date();
+    const { currentDate } = this.props;
     let firstDate = this.getDateOfWeek();
     firstDate.setDate(firstDate.getDate() - firstDate.getDay());
     const calendarDates = [];
@@ -35,5 +35,15 @@ class Week extends Component {
     return <tr>{this.getDates()}</tr>;
   }
 }
+
+Week.propTypes = {
+  year: PropTypes.number.isRequired,
+  weekNumber: PropTypes.number.isRequired,
+  currentDate: PropTypes.instanceOf(Date),
+};
+
+Week.defaultProps = {
+  currentDate: new Date(),
+};
 
 export default Week;

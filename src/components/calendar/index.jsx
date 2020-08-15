@@ -16,10 +16,11 @@ class Calendar extends Component {
     const { currentDate } = this.state;
     return (
       <article className={styles.container}>
-        <CurrentDate />
+        <CurrentDate currentDate={currentDate} />
         <Month
           year={currentDate.getFullYear()}
           currentMonth={currentDate.getMonth()}
+          currentDate={currentDate}
         />
       </article>
     );
