@@ -3,7 +3,7 @@ import * as date from 'date-fns';
 import styles from './date.module.css';
 import PropTypes from 'prop-types';
 
-function CurrentDate(props) {
+function Day(props) {
   const { currentDate } = props;
 
   return (
@@ -16,12 +16,12 @@ function CurrentDate(props) {
   );
 }
 
-CurrentDate.propTypes = {
+Day.propTypes = {
   currentDate: PropTypes.instanceOf(Date),
 };
 
-CurrentDate.defaultProps = {
+Day.defaultProps = {
   currentDate: new Date(),
 };
 
-export default CurrentDate;
+export default Day;

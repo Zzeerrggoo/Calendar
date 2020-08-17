@@ -1,5 +1,3 @@
-@import '../../common/reset.module.css';
-
 .container {
   box-sizing: border-box;
   display: inline-flex;
