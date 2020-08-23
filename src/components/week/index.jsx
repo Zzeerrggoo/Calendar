@@ -1,34 +1,25 @@
 import React, { Component } from 'react';
 import CalendarDate from './../calendar-date';
+import * as dateFNS from 'date-fns';
 import PropTypes from 'prop-types';
 
 class Week extends Component {
   getDates() {
-    const { currentDate } = this.props;
-    let firstDate = this.getDateOfWeek();
-    firstDate.setDate(firstDate.getDate() - firstDate.getDay());
-    const calendarDates = [];
-
-    for (let i = 0; i < 7; ++i) {
-      calendarDates.push(
+    const { currentDate, startOfWeek } = this.props;
+    const calendarDates = dateFNS
+      .eachDayOfInterval({
+        start: startOfWeek,
+        end: dateFNS.addDays(startOfWeek, 6),
+      })
+      .map((item) => (
         <CalendarDate
-          key={firstDate.toDateString()}
-          date={firstDate.getDate()}
+          key={item.toDateString()}
+          date={item}
           currentDate={currentDate}
-          isCurrentMonth={firstDate.getMonth() === currentDate.getMonth()}
         />
-      );
-
-      firstDate.setDate(firstDate.getDate() + 1);
-    }
+      ));
 
     return calendarDates;
-  }
-
-  getDateOfWeek() {
-    const { year, weekNumber } = this.props;
-    const d = 1 + (weekNumber - 1) * 7;
-    return new Date(year, 0, d);
   }
 
   render() {
@@ -37,8 +28,7 @@ class Week extends Component {
 }
 
 Week.propTypes = {
-  year: PropTypes.number.isRequired,
-  weekNumber: PropTypes.number.isRequired,
+  startOfWeek: PropTypes.instanceOf(Date).isRequired,
   currentDate: PropTypes.instanceOf(Date),
 };
 

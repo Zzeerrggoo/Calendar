@@ -17,11 +17,7 @@ class Calendar extends Component {
     return (
       <article className={styles.container}>
         <Day currentDate={currentDate} />
-        <Month
-          year={currentDate.getFullYear()}
-          currentMonth={currentDate.getMonth()}
-          currentDate={currentDate}
-        />
+        <Month currentDate={currentDate} />
       </article>
     );
   }
